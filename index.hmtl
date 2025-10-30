@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 3 - SPA</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Aplicação Interativa</h1>
+        <nav>
+            <ul>
+                <li><a href="#" onclick="navigate('home')">Início</a></li>
+                <li><a href="#" onclick="navigate('cadastro')">Cadastro</a></li>
+                <li><a href="#" onclick="navigate('lista')">Lista</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- TELA HOME -->
+    <section id="home" class="page active">
+        <h2>Bem-vindo ao Sistema!</h2>
+        <p>Navegue pelas opções do menu acima.</p>
+    </section>
+
+    <!-- TELA CADASTRO -->
+    <section id="cadastro" class="page">
+        <h2>Cadastro de Usuários</h2>
+
+        <form id="formCadastro">
+            <label>Nome:</label>
+            <input id="nome" type="text"><span class="erro" id="erroNome"></span><br><br>
+
+            <label>Email:</label>
+            <input id="email" type="email"><span class="erro" id="erroEmail"></span><br><br>
+
+            <label>Telefone:</label>
+            <input id="telefone" type="tel"><span class="erro" id="erroTel"></span><br><br>
+
+            <button type="submit">Cadastrar</button>
+        </form>
+    </section>
+
+    <!-- TELA LISTA -->
+    <section id="lista" class="page">
+        <h2>Usuários Cadastrados</h2>
+        <table border="1">
+            <thead>
+                <tr><th>Nome</th><th>Email</th><th>Telefone</th></tr>
+            </thead>
+            <tbody id="tabelaUsuarios"></tbody>
+        </table>
+    </section>
+
+    <script src="assets/js/routes.js"></script>
+    <script src="assets/js/storage.js"></script>
+    <script src="assets/js/app.js"></script>
+
+</body>
+</html>

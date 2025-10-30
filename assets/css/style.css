@@ -1,0 +1,31 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #eeeeee;
+}
+
+header {
+    background-color: #222;
+    color: #fff;
+    padding: 12px;
+    text-align: center;
+}
+
+nav ul { list-style: none; padding: 0; }
+nav ul li { display: inline; margin: 0 10px; }
+nav ul li a { color: #fff; text-decoration: none; }
+
+.page {
+    display: none;
+    padding: 20px;
+}
+
+.page.active {
+    display: block;
+}
+
+.erro {
+    color: red;
+    font-size: 12px;
+    margin-left: 5px;
+}
