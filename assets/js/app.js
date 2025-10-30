@@ -1,44 +1,32 @@
-const form = document.getElementById('formCadastro');
-const tabela = document.getElementById('tabelaUsuarios');
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('formCadastro');
+    const tabela = document.getElementById('tabelaUsuarios');
 
-form.addEventListener('submit', (event) => {
-    event.preventDefault();
+    // Função para atualizar a tabela
+    function atualizarTabela() {
+        tabela.innerHTML = '';
+        listarUsuarios().forEach(u => {
+            const tr = document.createElement('tr');
+            tr.innerHTML = <><td>${u.nome}</td><td>${u.email}</td><td>${u.telefone}</td></>;
+            tabela.appendChild(tr);
+        });
+    }
 
-    let nome = document.getElementById('nome').value.trim();
-    let email = document.getElementById('email').value.trim();
-    let telefone = document.getElementById('telefone').value.trim();
+    // Atualiza a tabela ao carregar a página
+    atualizarTabela();
 
-    let valido = true;
+    // Evento de envio do formulário
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
 
-    document.getElementById('erroNome').innerText = nome ? "" : "Campo obrigatório";
-    if (!nome) valido = false;
+        const usuario = {
+            nome: document.getElementById('nome').value,
+            email: document.getElementById('email').value,
+            telefone: document.getElementById('telefone').value
+        };
 
-    document.getElementById('erroEmail').innerText = email.includes('@') ? "" : "Email inválido";
-    if (!email.includes('@')) valido = false;
-
-    document.getElementById('erroTel').innerText = telefone.length >= 8 ? "" : "Telefone inválido";
-    if (telefone.length < 8) valido = false;
-
-    if (!valido) return;
-
-    let usuario = { nome, email, telefone };
-    salvarUsuario(usuario);
-    exibirUsuarios();
-    form.reset();
-    navigate('lista');
-});
-
-function exibirUsuarios() {
-    tabela.innerHTML = "";
-    carregarUsuarios().forEach(user => {
-        tabela.innerHTML += `
-            <tr>
-                <td>${user.nome}</td>
-                <td>${user.email}</td>
-                <td>${user.telefone}</td>
-            </tr>
-        `;
+        salvarUsuario(usuario);
+        atualizarTabela();
+        form.reset();
     });
-}
-
-window.onload = () => exibirUsuarios();
+});

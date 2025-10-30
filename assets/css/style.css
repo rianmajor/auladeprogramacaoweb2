@@ -1,31 +1,7 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background-color: #eeeeee;
-}
-
-header {
-    background-color: #222;
-    color: #fff;
-    padding: 12px;
-    text-align: center;
-}
-
-nav ul { list-style: none; padding: 0; }
-nav ul li { display: inline; margin: 0 10px; }
-nav ul li a { color: #fff; text-decoration: none; }
-
-.page {
-    display: none;
-    padding: 20px;
-}
-
-.page.active {
-    display: block;
-}
-
-.erro {
-    color: red;
-    font-size: 12px;
-    margin-left: 5px;
-}
+body { font-family: Arial; margin:0; padding:0; }
+header { background:#0077cc; color:#fff; padding:10px 20px; }
+nav ul { list-style:none; display:flex; gap:15px; padding:0; }
+.page { display:none; padding:20px; }
+.page.active { display:block; }
+table { width:100%; border-collapse:collapse; }
+th, td { padding:8px; text-align:left; }
