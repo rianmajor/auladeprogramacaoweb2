@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Site - SPA</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
 <body>
 
     <header>
@@ -12,16 +21,16 @@
     </header>
 
     <main>
-        <!-- CONTEÚDO PRINCIPAL DO SPA -->
+        <!-- Container de conteúdo do SPA -->
         <div id="content">
 
             <h2>Página Inicial</h2>
             <p>Aqui você pode acessar nossos serviços e se cadastrar.</p>
 
-            <!-- Botão que ativa o SPA do formulário -->
+            <!-- Botão SPA para exibir o formulário -->
             <button id="btn-cadastrar">Me Cadastrar</button>
 
-            <!-- Formulário será inserido aqui dinamicamente -->
+            <!-- O formulário será carregado aqui -->
             <div id="form-container"></div>
 
         </div>
@@ -31,7 +40,7 @@
         <p>© 2025 - Seu Site. Todos os direitos reservados.</p>
     </footer>
 
-    <!-- Importação dos JavaScripts (ORDEM IMPORTANTE!) -->
+    <!-- Scripts do SPA em ORDEM correta -->
     <script type="module" src="assets/js/templates.js"></script>
     <script type="module" src="assets/js/spa.js"></script>
     <script type="module" src="assets/js/form.js"></script>
