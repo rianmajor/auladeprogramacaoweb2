@@ -5,6 +5,7 @@ body {
     padding: 0;
 }
 
+/* Cabeçalho */
 header {
     background: #0077cc;
     color: #fff;
@@ -18,6 +19,7 @@ nav ul {
     padding: 0;
 }
 
+/* SPA Pages */
 .page {
     display: none;
     padding: 20px;
@@ -27,7 +29,7 @@ nav ul {
     display: block;
 }
 
-/* Estilização aprimorada de tabela */
+/* Tabelas aprimoradas */
 table {
     width: 100%;
     border-collapse: collapse;
