@@ -8,7 +8,6 @@ document.addEventListener('submit', function (e) {
   const telefone = document.getElementById('telefone')?.value.trim();
   const mensagem = document.getElementById('mensagem');
 
-  // validação simples
   if (!nome || !email) {
     mensagem.textContent = 'Por favor, preencha os campos obrigatórios (Nome e Email).';
     mensagem.style.color = 'red';
@@ -22,13 +21,11 @@ document.addEventListener('submit', function (e) {
     return;
   }
 
-  // simula cadastro -> salva no localStorage (exemplo)
   const users = JSON.parse(localStorage.getItem('users') || '[]');
   users.push({ nome, email, telefone, created: new Date().toISOString() });
   localStorage.setItem('users', JSON.stringify(users));
 
   mensagem.textContent = 'Cadastro realizado com sucesso!';
   mensagem.style.color = 'green';
-
   e.target.reset();
 });

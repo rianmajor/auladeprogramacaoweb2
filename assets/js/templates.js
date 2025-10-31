@@ -15,6 +15,6 @@ export const cadastroTemplate = `
       <button type="submit">Cadastrar</button>
     </form>
 
-    <div id="mensagem" aria-live="polite" style="margin-top:10px;"></div>
+    <div id="mensagem" aria-live="polite"></div>
   </section>
 `;
