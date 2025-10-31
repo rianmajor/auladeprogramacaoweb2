@@ -1,16 +1,20 @@
-// Template do formulário de cadastro
-const cadastroTemplate = `
-  <form id="cadastro-form">
-    <label>Nome:</label>
-    <input type="text" id="nome" required><br><br>
+// assets/js/templates.js
+export const cadastroTemplate = `
+  <section id="cadastro-section">
+    <h3>Cadastro de Usuários</h3>
+    <form id="cadastro-form" novalidate>
+      <label for="nome">Nome:</label><br>
+      <input type="text" id="nome" name="nome" required><br><br>
 
-    <label>Email:</label>
-    <input type="email" id="email" required><br><br>
+      <label for="email">Email:</label><br>
+      <input type="email" id="email" name="email" required><br><br>
 
-    <label>Senha:</label>
-    <input type="password" id="senha" required><br><br>
+      <label for="telefone">Telefone:</label><br>
+      <input type="tel" id="telefone" name="telefone"><br><br>
 
-    <button type="submit">Enviar</button>
-  </form>
-  <div id="mensagem"></div>
+      <button type="submit">Cadastrar</button>
+    </form>
+
+    <div id="mensagem" aria-live="polite" style="margin-top:10px;"></div>
+  </section>
 `;
