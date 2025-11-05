@@ -1,122 +1,121 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
     box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
 }
 
-/* ---------- LIGHT MODE ---------- */
 body {
     background: #f4f4f4;
-    color: #333;
+    color: #222;
     transition: .3s;
 }
 
+/* HEADER */
 header {
     background: #fff;
-    padding: 20px;
+    padding: 18px 10%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 2px 4px #0001;
+    box-shadow: 0 2px 6px #00000015;
+}
+
+header h1 {
+    font-size: 26px;
+    font-weight: 700;
 }
 
 nav ul {
     display: flex;
+    gap: 18px;
     list-style: none;
-    gap: 15px;
 }
 
 nav a {
     text-decoration: none;
-    color: inherit;
-    font-weight: bold;
-    transition: .2s;
+    font-weight: 500;
+    padding: 6px 10px;
+    border-radius: 6px;
+    transition: 0.2s;
 }
 
 nav a:hover {
-    opacity: .7;
+    background: #00a85930;
 }
 
+/* Botão Dark Mode */
+#toggle-theme {
+    border: none;
+    font-size: 20px;
+    background: none;
+    cursor: pointer;
+}
+
+/* Conteúdo */
 main {
     padding: 40px 10%;
 }
 
-footer {
-    background: #fff;
-    padding: 20px;
-    text-align: center;
-    margin-top: 40px;
-    box-shadow: 0 -2px 4px #0001;
-}
-
-/* Botão */
-.btn {
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    font-weight: bold;
-    border-radius: 4px;
-    margin-top: 10px;
-    background: #333;
-    color: #fff;
-}
-
-/* Imagem */
 .main-img {
     display: block;
-    margin: 20px auto;
+    margin: 25px auto;
     max-width: 100%;
-    border-radius: 8px;
+    border-radius: 12px;
 }
 
-/* Formulários */
+/* Botões */
+.btn {
+    padding: 12px 22px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 700;
+    background: #00a859;
+    color: white;
+    transition: .3s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px #00000030;
+}
+
+/* Animação pulsante */
+.pulse {
+    animation: pulse 1.8s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+    100% { transform: scale(1); }
+}
+
+/* Formulário */
 input, textarea {
     width: 100%;
     padding: 12px;
-    margin: 8px 0;
-    border-radius: 6px;
+    margin: 10px 0;
+    border-radius: 8px;
     border: 1px solid #ccc;
 }
 
-/* ---------- DARK MODE ---------- */
+/* FOOTER */
+footer {
+    padding: 18px;
+    text-align: center;
+    margin-top: 40px;
+    background: #fff;
+    box-shadow: 0 -2px 6px #00000015;
+}
+
+/* Dark Mode */
 body.dark {
-    background: #121212;
+    background: #111;
     color: #eee;
 }
 
-body.dark header,
-body.dark footer {
-    background: #1e1e1e;
-    box-shadow: none;
-}
-
-body.dark .btn {
-    background: #eee;
-    color: #111;
-}
-
-body.dark input,
-body.dark textarea {
-    background: #1e1e1e;
-    border: 1px solid #444;
-    color: #eee;
-}
-
-/* ---------- TRANSIÇÃO ENTRE PÁGINAS ---------- */
-.fade {
-    opacity: 0;
-    transition: opacity .3s;
-}
-
-.fade-in {
-    opacity: 1;
-}
-
-/* Dark Mode Button */
-#toggle-theme {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 20px;
+body.dark header, body.dark footer {
+    background: #181818;
 }
