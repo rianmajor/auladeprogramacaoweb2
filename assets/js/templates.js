@@ -3,7 +3,7 @@ export function homeTemplate() {
         <h2>Bem-vindo ao Voluntariar!</h2>
         <p>Conectamos voluntários com projetos sociais. Faça a diferença hoje mesmo!</p>
 
-        <img class="main-img" src="assets/img/foto.png" alt="Voluntariado">
+        <img class="main-img" src="assets/img/voluntariado.jpg" alt="Voluntariado">
 
         <button id="btn-cadastrar" class="btn pulse">Quero Ajudar</button>
 
