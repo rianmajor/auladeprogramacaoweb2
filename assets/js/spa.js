@@ -1,35 +1,29 @@
-import { homeTemplate, sobreTemplate, contatoTemplate } from './templates.js';
+import { homeTemplate, sobreTemplate, contatoTemplate } from "./templates.js";
+import { carregarForm } from "./form.js";
 
-const content = document.getElementById("content");
+const links = document.querySelectorAll("nav a");
 
-function loadPage(page) {
-    content.classList.remove("fade-in");
-
-    setTimeout(() => {
-        switch(page) {
-            case "sobre":
-                content.innerHTML = sobreTemplate();
-                break;
-            case "contato":
-                content.innerHTML = contatoTemplate();
-                break;
-            default:
-                content.innerHTML = homeTemplate();
-        }
-        content.classList.add("fade-in");
-    }, 200);
-}
-
-document.querySelectorAll("nav a").forEach(link => {
-    link.addEventListener("click", e => {
+links.forEach(link => {
+    link.addEventListener("click", (e) => {
         e.preventDefault();
-        loadPage(e.target.dataset.page);
+        const page = link.dataset.page;
+        renderPage(page);
     });
 });
 
-document.getElementById("toggle-theme").addEventListener("click", () => {
-    document.body.classList.toggle("dark");
-});
+function renderPage(page) {
+    let content = document.getElementById("content");
 
-// Carrega Home ao entrar
-loadPage("home");
+    if (page === "sobre") {
+        content.innerHTML = sobreTemplate();
+    } else if (page === "contato") {
+        content.innerHTML = contatoTemplate();
+    } else {
+        content.innerHTML = homeTemplate();
+    }
+
+    carregarForm(); // garante funcionamento do botão em qualquer navegação
+}
+
+// Carregar Home ao iniciar
+renderPage("home");
