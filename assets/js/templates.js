@@ -1,20 +1,34 @@
-// assets/js/templates.js
-export const cadastroTemplate = `
-  <section id="cadastro-section">
-    <h3>Cadastro de Usuários</h3>
-    <form id="cadastro-form" novalidate>
-      <label for="nome">Nome:</label><br>
-      <input type="text" id="nome" name="nome" required><br><br>
+export function homeTemplate() {
+    return `
+        <h2>Página Inicial</h2>
+        <p>Aqui você pode acessar nossos serviços e se cadastrar.</p>
 
-      <label for="email">Email:</label><br>
-      <input type="email" id="email" name="email" required><br><br>
+        <img class="main-img" src="assets/img/foto.png" alt="Voluntariado">
 
-      <label for="telefone">Telefone:</label><br>
-      <input type="tel" id="telefone" name="telefone"><br><br>
+        <button id="btn-cadastrar" class="btn">Me Cadastrar</button>
 
-      <button type="submit">Cadastrar</button>
-    </form>
+        <div id="form-container"></div>
+    `;
+}
 
-    <div id="mensagem" aria-live="polite"></div>
-  </section>
-`;
+export function sobreTemplate() {
+    return `
+        <h2>Sobre Nós</h2>
+        <p>Este projeto demonstra uma Single Page Application usando HTML, CSS e JavaScript.</p>
+        <p>Objetivo: aprender versionamento, acessibilidade e deploy!</p>
+    `;
+}
+
+export function contatoTemplate() {
+    return `
+        <h2>Contato</h2>
+        <p>Preencha o formulário e entraremos em contato com você:</p>
+
+        <form id="form-contato">
+            <input type="text" placeholder="Seu nome" required>
+            <input type="email" placeholder="Seu e-mail" required>
+            <textarea placeholder="Sua mensagem" required></textarea>
+            <button type="submit" class="btn">Enviar</button>
+        </form>
+    `;
+}

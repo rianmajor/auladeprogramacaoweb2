@@ -5,44 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meu Site - SPA</title>
 
-    <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
 
     <header>
-        <h1>Bem-vindo ao Meu Site</h1>
+        <h1>Meu Site</h1>
         <nav>
             <ul>
-                <li><a href="#" id="linkHome">Home</a></li>
-                <li><a href="#" id="linkSobre">Sobre</a></li>
-                <li><a href="#" id="linkContato">Contato</a></li>
+                <li><a href="#" data-page="home">Home</a></li>
+                <li><a href="#" data-page="sobre">Sobre</a></li>
+                <li><a href="#" data-page="contato">Contato</a></li>
             </ul>
         </nav>
+        <button id="toggle-theme">🌙</button>
     </header>
 
     <main>
-        <div id="content">
-
-            <h2>Página Inicial</h2>
-            <p>Aqui você pode acessar nossos serviços e se cadastrar.</p>
-
-            <!-- Imagem corrigida -->
-            <img src="assets/img/foto.png" alt="Voluntariado" style="display:block; margin:15px auto; max-width:100%; height:auto;">
-
-            <button id="btn-cadastrar">Me Cadastrar</button>
-
-            <div id="form-container"></div>
-
-        </div>
+        <div id="content" class="fade"></div>
     </main>
 
     <footer>
-        <p>© 2025 - Meu Site. Todos os direitos reservados.</p>
+        <p>©️ 2025 - Meu Site. Todos os direitos reservados.</p>
     </footer>
 
-    <!-- Scripts JS -->
     <script type="module" src="assets/js/templates.js"></script>
     <script type="module" src="assets/js/spa.js"></script>
     <script type="module" src="assets/js/form.js"></script>

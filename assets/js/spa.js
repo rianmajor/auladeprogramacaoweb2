@@ -1,13 +1,35 @@
-// assets/js/spa.js
-import { cadastroTemplate } from './templates.js';
+import { homeTemplate, sobreTemplate, contatoTemplate } from './templates.js';
 
-const btnCadastrar = document.getElementById('btn-cadastrar');
-const formContainer = document.getElementById('form-container');
+const content = document.getElementById("content");
 
-if (btnCadastrar && formContainer) {
-  btnCadastrar.addEventListener('click', () => {
-    formContainer.innerHTML = cadastroTemplate;
-  });
-} else {
-  console.warn('Elemento #btn-cadastrar ou #form-container não encontrado.');
+function loadPage(page) {
+    content.classList.remove("fade-in");
+
+    setTimeout(() => {
+        switch(page) {
+            case "sobre":
+                content.innerHTML = sobreTemplate();
+                break;
+            case "contato":
+                content.innerHTML = contatoTemplate();
+                break;
+            default:
+                content.innerHTML = homeTemplate();
+        }
+        content.classList.add("fade-in");
+    }, 200);
 }
+
+document.querySelectorAll("nav a").forEach(link => {
+    link.addEventListener("click", e => {
+        e.preventDefault();
+        loadPage(e.target.dataset.page);
+    });
+});
+
+document.getElementById("toggle-theme").addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+});
+
+// Carrega Home ao entrar
+loadPage("home");
