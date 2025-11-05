@@ -2,6 +2,7 @@ import { homeTemplate, sobreTemplate, contatoTemplate } from "./templates.js";
 import { carregarForm } from "./form.js";
 
 const links = document.querySelectorAll("nav a");
+const themeToggle = document.getElementById("toggle-theme");
 
 links.forEach(link => {
     link.addEventListener("click", (e) => {
@@ -22,8 +23,18 @@ function renderPage(page) {
         content.innerHTML = homeTemplate();
     }
 
-    carregarForm(); // garante funcionamento do botão em qualquer navegação
+    carregarForm(); // para o botão funcionar na Home
+    ativarDarkMode(); // garante o dark mode após cada troca
 }
 
-// Carregar Home ao iniciar
+// Dark Mode ✅
+function ativarDarkMode() {
+    themeToggle.addEventListener("click", () => {
+        document.body.classList.toggle("dark");
+        themeToggle.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
+    });
+}
+
+// Iniciar Home
 renderPage("home");
+ativarDarkMode(); // ativa ao carregar a primeira vez
