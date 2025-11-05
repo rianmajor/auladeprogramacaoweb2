@@ -5,6 +5,7 @@
     font-family: 'Inter', sans-serif;
 }
 
+/* Tema Claro (padrão) */
 body {
     background: #f4f4f4;
     color: #222;
@@ -38,6 +39,7 @@ nav a {
     padding: 6px 10px;
     border-radius: 6px;
     transition: 0.2s;
+    color: #222;
 }
 
 nav a:hover {
@@ -99,6 +101,8 @@ input, textarea {
     margin: 10px 0;
     border-radius: 8px;
     border: 1px solid #ccc;
+    background: #fff;
+    color: #222;
 }
 
 /* FOOTER */
@@ -110,12 +114,42 @@ footer {
     box-shadow: 0 -2px 6px #00000015;
 }
 
-/* Dark Mode */
+/* ------------------
+   DARK MODE COMPLETO
+------------------- */
 body.dark {
-    background: #111;
+    background: #121212;
+    color: #f4f4f4;
+}
+
+body.dark header,
+body.dark footer {
+    background: #1e1e1e;
+    box-shadow: 0 2px 6px #00000060;
+}
+
+body.dark nav a {
     color: #eee;
 }
 
-body.dark header, body.dark footer {
-    background: #181818;
+body.dark nav a:hover {
+    background: #00a85980;
+}
+
+/* Inputs escuros */
+body.dark input,
+body.dark textarea {
+    background: #222;
+    border: 1px solid #555;
+    color: #fff;
+}
+
+/* Botões em Dark */
+body.dark .btn {
+    background: #00994f;
+}
+
+/* Sombra imagens */
+body.dark .main-img {
+    box-shadow: 0 0 10px #00000070;
 }
